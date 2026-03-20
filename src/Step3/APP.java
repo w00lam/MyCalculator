@@ -43,13 +43,14 @@ public class APP {
                     }
                 }
                 case "2" -> {
+                    // 2번: 우리가 구현한 필터링 기능
                     if (calc.getResults().isEmpty()) {
                         System.out.println("저장된 연산 결과가 없습니다. 먼저 계산을 수행해주세요.");
                     } else {
                         try {
                             System.out.print("기준값을 입력하세요: ");
-                            double threshold = Double.parseDouble(sc.nextLine());
-                            calc.printResultsGreaterThan(threshold);
+                            double input = Double.parseDouble(sc.nextLine());
+                            calc.printResultsGreaterThan(input);
                         } catch (NumberFormatException e) {
                             System.out.println("오류: 숫자 형식으로 입력해주세요.");
                         }
