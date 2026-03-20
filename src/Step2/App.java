@@ -1,15 +1,12 @@
 package Step2;
 
-import Step2.Calculator;
-
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Calculator calc = new Calculator();
-        int result = 0;
-        String choice = null;
+        String choice;
 
         do {
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -22,8 +19,7 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요: ");
             char c = sc.nextLine().charAt(0);
 
-            result = calc.calculate(a, b, c);
-            System.out.println("결과: " + result);
+            calc.calculate(a, b, c);
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
             choice = sc.nextLine();
