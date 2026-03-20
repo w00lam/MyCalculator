@@ -38,4 +38,8 @@ public class Calculator {
     public void setResults(List<Integer> results) {
         this.results = results;
     }
+
+    public void removeResult() {
+        results.remove(results.getFirst());
+    }
 }

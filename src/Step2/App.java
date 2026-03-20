@@ -20,6 +20,7 @@ public class App {
             char c = sc.nextLine().charAt(0);
 
             calc.calculate(a, b, c);
+            calc.removeResult();
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
             choice = sc.nextLine();
