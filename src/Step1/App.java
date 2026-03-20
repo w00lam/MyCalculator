@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String choice;
+        int result = 0;
+        String choice = null;
 
         do {
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -20,22 +21,23 @@ public class App {
 
             switch (c) {
                 case '+':
-                    System.out.println("결과: " + (a + b));
+                    result = a + b;
                     break;
                 case '-':
-                    System.out.println("결과: " + (a - b));
+                    result = a - b;
                     break;
                 case '*':
-                    System.out.println("결과: " + (a * b));
+                    result = a * b;
                     break;
                 case '/':
                     if (b == 0) {
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     } else {
-                        System.out.println("결과: " + (a / b));
+                        result = a / b;
                     }
                     break;
             }
+            System.out.println("결과: " + result);
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
             choice = sc.nextLine();
         } while (!choice.equalsIgnoreCase("exit"));
