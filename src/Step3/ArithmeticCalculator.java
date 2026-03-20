@@ -2,6 +2,7 @@ package Step3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
     private List<T> results = new ArrayList<>();
@@ -26,5 +27,25 @@ public class ArithmeticCalculator<T extends Number> {
         result = (T) Double.valueOf(resultValue);
         results.add(result);
         return result;
+    }
+
+    public void printResultsGreaterThan(double input) {
+        String greaterThanList = results.stream()
+                .filter(n -> n.doubleValue() > input)
+                .map(n -> {
+                    double val = n.doubleValue();
+                    return (val % 1 == 0) ? String.valueOf((long) val) : String.valueOf(val);
+                })
+                .collect(Collectors.joining(", "));
+
+        if (greaterThanList.isEmpty()) {
+            System.out.println(input + "보다 큰 연산 결과가 없습니다.");
+        } else {
+            System.out.println(input + "보다 큰 연산 결과: " + greaterThanList);
+        }
+    }
+
+    public List<T> getResults() {
+        return new ArrayList<>(results);
     }
 }
